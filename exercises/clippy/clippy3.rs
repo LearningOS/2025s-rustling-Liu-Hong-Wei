@@ -4,28 +4,26 @@
 //
 // Execute `rustlings hint clippy3` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
-
 #[allow(unused_variables, unused_assignments)]
 fn main() {
     let my_option: Option<()> = None;
+    // Don't unwrap None values
     if my_option.is_none() {
-        my_option.unwrap();
+        return;
     }
 
     let my_arr = &[
-        -1, -2, -3
+        -1, -2, -3,  // Added missing comma
         -4, -5, -6
     ];
     println!("My array! Here it is: {:?}", my_arr);
 
-    let my_empty_vec = vec![1, 2, 3, 4, 5].resize(0, 5);
+    let my_empty_vec: Vec<i32> = Vec::new(); // Create an empty vector directly
     println!("This Vec is empty, see? {:?}", my_empty_vec);
 
     let mut value_a = 45;
     let mut value_b = 66;
     // Let's swap these two!
-    value_a = value_b;
-    value_b = value_a;
+    std::mem::swap(&mut value_a, &mut value_b); // Use std::mem::swap for swapping values
     println!("value a: {}; value b: {}", value_a, value_b);
 }
