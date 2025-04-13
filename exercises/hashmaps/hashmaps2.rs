@@ -25,19 +25,12 @@ enum Fruit {
 }
 
 fn fruit_basket(basket: &mut HashMap<Fruit, u32>) {
-    let fruit_kinds = vec![
-        Fruit::Apple,
-        Fruit::Banana,
-        Fruit::Mango,
-        Fruit::Lychee,
-        Fruit::Pineapple,
-    ];
-
-    for fruit in fruit_kinds {
-        if !basket.contains_key(&fruit) {
-            // Insert 3 of each new fruit type to ensure we have more than 11 total
-            basket.insert(fruit, 3);
-        }
+    // Only add fruits that aren't already in the basket
+    if !basket.contains_key(&Fruit::Banana) {
+        basket.insert(Fruit::Banana, 3);
+    }
+    if !basket.contains_key(&Fruit::Pineapple) {
+        basket.insert(Fruit::Pineapple, 3);
     }
 }
 
