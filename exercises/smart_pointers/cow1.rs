@@ -6,9 +6,6 @@
 // required. The type is designed to work with general borrowed data via the
 // Borrow trait.
 //
-// This exercise is meant to show you what to expect when passing data to Cow.
-// Fix the unit tests by checking for Cow::Owned(_) and Cow::Borrowed(_) at the
-// TODO markers.
 //
 // Execute `rustlings hint cow1` or use the `hint` watch subcommand for a hint.
 
